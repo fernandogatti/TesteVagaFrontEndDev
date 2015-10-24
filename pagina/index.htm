@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/geral.css"/>
+    <script type="text/javascript" src="js/jquery-1.9.0.js"></script>
+	<title>Wine</title>
+    
+<script type="text/javascript">
+var YY = 2015;
+var MM = 10;
+var DD = 24;
+var HH = 23;
+var MI = 59;
+var SS = 59; 
+
+function atualizaContador() {  
+	var hoje = new Date();  
+	var futuro = new Date(YY,MM-1,DD,HH,MI,SS);   
+	var ss = parseInt((futuro - hoje) / 1000);  
+	var mm = parseInt(ss / 60);  
+	var hh = parseInt(mm / 60);  
+	var dd = parseInt(hh / 24);   
+	ss = ss - (mm * 60);  
+	mm = mm - (hh * 60);  
+	hh = hh - (dd * 24);   
+	var faltam = '';  
+	faltam += (dd && dd > 1) ? dd+' dias, ' : (dd==1 ? '1 dia, ' : '');  
+	faltam += (toString(hh).length) ? hh+'h:' : '';  
+	faltam += (toString(mm).length) ? mm+'m:' : '';  
+	faltam += ss+'s';   
+
+	 if (dd+hh+mm+ss > 0) 
+	 {
+	  document.getElementById('contador').innerHTML = faltam;	
+	  setTimeout(atualizaContador,1000);  
+	 }
+	 else
+	 {
+		$(".de").hide();
+		document.getElementById('info-topo').innerHTML = '<p>Para os apaixonados por vinhos...</p>';
+		document.getElementById('imagem').innerHTML = '<figure><img src="img/garrafa2.png"/></figure>';
+		document.getElementById('por').innerHTML = 'R$ 962,00';
+		document.getElementById('socio').innerHTML = 'Sócios ClubeW: R$ 817,70';
+		document.getElementById('info-rodape').innerHTML = '&copy; Wine.com.br';
+	 }
+}
+</script>
+
+    
+</head>
+<body onload="atualizaContador();">
+	<header id="topo">
+		<div id="info-topo" class="corpo">  				
+			<p>Aproveite essa oferta única </p>
+			<figure><img src="img/24h.png"/></figure>
+			<p>Acaba em <span id="contador" class="crono"></span></p>			
+		</div>
+	</header>
+
+	<section id="conteudo">
+		<article class="corpo clearfix">  
+			<div id="info">
+				<h1>Vinho do Porto Dow`s Vintage 1997</h1>
+				<h3><span class="bandeira"><img  src="img/bandeira.png"/></span>Região Douro, Portugal</h4>
+				
+				<div class="pontuacao">
+					<img src="img/detalhe1.png"/>
+						<p><strong>90 pontos</strong>
+						<br />
+						Peter Parker</p>
+					<img src="img/detalhe2.png"/>
+				</div><!-- .pontuacao -->
+				
+				<div class="pontuacao">
+					<img src="img/detalhe1.png"/>
+						<p><strong>90 pontos</strong>
+						<br />
+						Bruce Wayne</p>
+					<img src="img/detalhe2.png"/>
+				</div>
+			</div>
+			<div id="imagem"><figure><img src="img/garrafa1.png"/></figure></div>
+			<div id="comprar">
+				<p class="de">De R$ 962,00 por</p>
+				<p id="por" class="por">R$ 673,40</p>
+				<div class="quantidade">
+				<select>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+				<a href="javascript:void(0)" class="adicionar">Adicionar</a>
+				</div>	
+				<p id="socio">Sócios ClubeW: R$ 572,05</p>				
+			</div>
+		</article>
+	</section><!-- #area-conteudo -->
+	
+	<section id="lista">
+		<article class="corpo clearfix">  
+			<div class="coluna col1">
+				<h2>Composição e Serviço</h2>
+				<ol>	 
+					<li>
+						<p class="titulo"><span class="numero">1</span>Addy Osmani:</p>
+						<p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					</li>
+					<li>
+						<p class="titulo"><span class="numero">2</span>Saimo Koreno:</p>
+						<p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					</li>
+					<li>
+						<p class="titulo"><span class="numero">3</span>Fugimo Nakombi:</p>
+						<p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					</li>
+					<li>
+						<p class="titulo"><span class="numero">4</span>Osguarda Pararo:</p>
+						<p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					</li>
+				</ol>
+			</div><!-- .coluna -->
+			
+			<div class="coluna col2">
+				<h2>Sommelier Wine</h2>
+				<ul>	 
+					<li>
+						<p class="titulo"><span class="numero">1</span>Html:</p>
+						<p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					</li>
+					<li>
+						<p class="titulo"><span class="numero">2</span>CSS:</p>
+						<p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					</li>
+					<li>
+						<p class="titulo"><span class="numero">3</span>Javascript:</p>
+						<p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					</li>
+					<li>
+						<p class="titulo"><span class="numero">4</span>Tipografia:</p>
+						<p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					</li>					
+				</ul>
+			</div><!-- .coluna -->
+		</article>
+	</section><!-- #lista -->
+
+	<footer id="rodape">
+		<div id="info-rodape" class="corpo">
+			*Essa oferta está disponível apenas no dia 24 de outubro até às 23h59min (horário de Brasília).
+		</div>
+	</footer><!-- #area-conteudo -->
+
+</body>
+</html>
